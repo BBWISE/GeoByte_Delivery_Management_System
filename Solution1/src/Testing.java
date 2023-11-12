@@ -25,7 +25,7 @@ public class Testing {
 		graph.add(c);
 		graph.add(d);
 		graph.add(e);
-		
+		 
 		WeightedGraph gg = new WeightedGraph(graph);
 		
 		@SuppressWarnings("rawtypes")
