@@ -141,6 +141,24 @@ public class EventHandlers extends GUI implements ActionListener {
 			}
 				
 		}
+		else if(event.getSource()==generateButt) {
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			LinkedList<Integer> route = func.get;
+			
+			routeTextArea.setText(locationNames.get(locationIds.indexOf(route.get(0))));
+			
+			for(int i=1;i<route.size();i++) {
+				routeTextArea.setText(routeTextArea.getText()+" ---> " + locationNames.get(locationIds.indexOf(route.get(0))));
+			}
+		}
 	}
 
 }
