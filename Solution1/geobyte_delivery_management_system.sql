@@ -51,3 +51,5 @@ CREATE TABLE IF NOT EXISTS `path` (
 		FOREIGN KEY (`location_id`)
         REFERENCES `geobyte_delivery_management_system`.`location`(`id`)
 );
+
+INSERT INTO location (id,name,clearing_cost) VALUES(1, 'GeoByte',25);
