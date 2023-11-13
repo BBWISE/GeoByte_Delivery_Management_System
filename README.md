@@ -50,6 +50,9 @@ From the Connector class<I>(Connector.java inside the <b>src</b> folder)</I> fil
 </li>
 <li>
 Finally, run the project by clicking on the <b>run</b> button within the IDE.
+
+You should see this:
+<img src="index.png" alt="Application home page." />
 </li>
 </ol>
 
