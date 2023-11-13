@@ -31,6 +31,8 @@ Copy and paste the set of SQL queries available inside the <strong> geobyte_deli
 Run/execute the provided queries to create the need database called <strong> geobyte_delivery_management_system</strong> with it respectful tables.
 </li>
 <li>
+Launch the Eclipse IDE
+</li>
 <li>Import the <b>Solution1</b> Project Folder into your Eclipse IDE.
 </li>
 <I>From the build paths of your Eclipse IDE,</I> add the provided MySQL JDBC Connector as an external jar file. <I>(to enable the program connect to the MySQL Database Server)</I>.
