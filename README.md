@@ -5,6 +5,11 @@ This repository contains the solutions to the five (5) days Assessment, which wa
 
 ## Solution1
 This folder contains the first solution, addressed using Swing, JDBC and MySQL Tools as earlier mentioned in the <b>Issues</b> of this repository.
+
+The majour principle used to address the problem is known as <b>Dijkstra Algorithm</b>.
+
+This algorithm was implemented within the Dijkstra class (Dijkstra.java) file to help find the shortest paths in a directed graph of nodes(locations) submitted by the <b>WeightedGraph class</b> (WeightedGraph.java) file as constructed using the <b>WeightedEdge class</b> (WeightedEdge.java) file.
+
 ### Requirements:
 To successfully run this Solution1 Project Folder, the tools listed are needed:
 <ol>
