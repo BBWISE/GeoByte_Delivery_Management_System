@@ -397,25 +397,22 @@ public class Functions {
 	}
 
 	public WeightedGraph convertToGraph(LinkedList<Integer> clearingCost,
-			ArrayList<LinkedList<Integer>> intermediates, ArrayList<LinkedList<Integer>> distances) {
+			ArrayList<LinkedList<Integer>> distances, ArrayList<LinkedList<Integer>> intermediates) {
 
 		ArrayList<LinkedList<WeightedEdge>> gg = new ArrayList<>(0);
-		//System.out.println(clearingCost+", "+intermediates+", "+distances);
 		for (int i = 0; i < intermediates.size(); i++) {
 
 			LinkedList<WeightedEdge> location = new LinkedList<>();
 
 			for (int j = 0; j < intermediates.get(i).size(); j++) {
-				System.out.println(clearingCost.get(i)+", "+ distances.get(i).get(j)+", "+
-						intermediates.get(i).get(j));
 				location.add(new WeightedEdge(clearingCost.get(i), distances.get(i).get(j),
 						intermediates.get(i).get(j)));
-
 			}
+			gg.add(location);
 		}
 
 		WeightedGraph graph = new WeightedGraph(gg);
-		System.out.println("graph size: "+graph.size());
+		
 		return graph;
 	}
 }
