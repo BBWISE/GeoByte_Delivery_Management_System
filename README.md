@@ -47,12 +47,12 @@ The project is expected to run successfully, else revisit this execution procedu
 ### Note:
 <ol>
   <li>
-    You're expected to <b>register a new User from the Application at first use.
+    You're expected to <b>register a new User</b> from the Application at first use.
   </li>
   <li>
-    Likewise, minimum of five(5) new locations are to added for better performance.
+    Likewise, minimum of five(5) new locations are to be added for better performance.
   </li>
   <li>
-    Following the Assumption rules as provided, a minimum of three deliveries are to the added before generating the Optimum Route.
+    Following the Assumption rules as provided, a minimum of three deliveries are to be added before generating the Optimum Route.
   </li>
 </ol>
