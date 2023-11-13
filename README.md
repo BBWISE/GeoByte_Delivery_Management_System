@@ -8,7 +8,7 @@ This folder contains the first solution, addressed using Swing, JDBC and MySQL T
 
 The majour principle used to address the problem is known as <b>Dijkstra Algorithm</b>.
 
-This algorithm was implemented within the Dijkstra class (Dijkstra.java) file to help find the shortest paths in a directed graph of nodes(locations) submitted by the <b>WeightedGraph class</b> (WeightedGraph.java) file as constructed using the <b>WeightedEdge class</b> (WeightedEdge.java) file.
+This algorithm was implemented within the <b>Dijkstra class</b> (Dijkstra.java) file to help find the shortest paths in a directed graph of nodes(locations) submitted by the <b>WeightedGraph class</b> (WeightedGraph.java) file as constructed using the <b>WeightedEdge class</b> (WeightedEdge.java) file.
 
 ### Requirements:
 To successfully run this Solution1 Project Folder, the tools listed are needed:
@@ -33,7 +33,10 @@ Open any of the MySQL query editor available on your PC.
 Copy and paste the set of SQL queries available inside the <strong> geobyte_delivery_management_system.sql</strong> file. <i>(the geobyte_delivery_management_system.sql file is also located inside the Solution1 Project Folder.)</i>
 </li>
 <li>
-Run/execute the provided queries to create the need database called <strong> geobyte_delivery_management_system</strong> with it respectful tables.
+Run/execute the provided queries to create the needed database called <strong> geobyte_delivery_management_system</strong> with it respectful tables.
+The Entity Relation Diagram (ERD) of the Schema should be like this:
+
+<img src="ERD.png" alt=" geobyte_delivery_management_system ER Diagram" />
 </li>
 <li>
 Launch the Eclipse IDE
