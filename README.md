@@ -40,4 +40,5 @@ Launch the Eclipse IDE
 <li>
 Finally, run the project by clicking on the <b>run</b> button within the IDE.
 </li>
+The project is expected to run successfully, else revisit this execution procedures again.
 </ol>
