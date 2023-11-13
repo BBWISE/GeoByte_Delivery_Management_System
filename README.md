@@ -14,6 +14,9 @@ To successfully run this Solution1 Project Folder, the tools listed are needed:
   <li>
     Eclipse Integrated Development Environment (IDE)
   </li>
+  <li>
+    MySQL JDBC Connector <i>(this had been made available in the <b>ext lib</b> folder within the Solution1)</i>
+  </li>
 </ol>
 
 ### How To Run The Solution1 Project Folder:
