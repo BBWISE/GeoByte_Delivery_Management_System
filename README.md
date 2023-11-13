@@ -5,4 +5,7 @@ This repository contains the solutions to the five (5) days Assessment, which wa
 
 ### Solution1
 This folder contains the first solution, addressed using Swing, JDBC and MySQL Tools as earlier mentioned in the <b>Issues</b> of this repository.
+### Requirements:
+
+
 ### How To Run The Solution1 Project Folder:
