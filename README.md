@@ -46,6 +46,9 @@ Launch the Eclipse IDE
 <I>From the build paths of your Eclipse IDE,</I> add the provided MySQL JDBC Connector as an external jar file. <I>(to enable the program connect to the MySQL Database Server)</I>.
 </li>
 <li>
+From the Connector class<I>(Connector.java inside the <b>src</b> folder)</I> file, change the <b>Username and Password</b> of the MySQL Server Connection to your own MySQL Server Connection credentials.
+</li>
+<li>
 Finally, run the project by clicking on the <b>run</b> button within the IDE.
 </li>
 </ol>
