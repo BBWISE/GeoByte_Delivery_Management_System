@@ -415,4 +415,14 @@ public class Functions {
 		
 		return graph;
 	}
+	
+	public int getTotalCost(LinkedList<Integer> route, LinkedList<Integer> clearingCost) {
+		int totalCost = 0;
+			
+			for(int i=1;i<route.size();i++) {
+				totalCost += (clearingCost.get(route.get(i)));
+			}
+		
+		return totalCost;
+	}
 }

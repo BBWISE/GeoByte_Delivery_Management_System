@@ -446,14 +446,13 @@ public class GUI extends JFrame {
 									
 										Route="";
 										routeTextArea.setEditable(false);
-										routeTextArea.setFont(new Font("Calibril", Font.BOLD, 20));
+										routeTextArea.setFont(new Font("Calibril", Font.BOLD, 18));
 									
 								DLCDCenter.add(DLCDCenterCenter, BorderLayout.CENTER);
 						deliveryLeftCentreDown.add(DLCDCenter, BorderLayout.CENTER);
 						
 						selectDeliveryPanel = new JPanel(new GridLayout((deliveryNames.size()+2),1));
 						selectDeliveryScrol = new JScrollPane(selectDeliveryPanel);
-						
 						
 					deliveryName.setFont(new Font("Calibril", Font.BOLD, 17));
 					deliveryDestination.setFont(new Font("Calibril", Font.BOLD, 17));
