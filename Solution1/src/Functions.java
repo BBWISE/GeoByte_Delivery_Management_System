@@ -1,6 +1,5 @@
 import java.sql.*;
-import java.util.LinkedList;
-
+import java.util.*;
 import javax.swing.JOptionPane;
 
 public class Functions {
@@ -309,9 +308,114 @@ public class Functions {
 	}
 	
 	//This method retrieves and returns the list of path from the Database
-	public getPath(LinkedList locationIds) {
+	/*public getPath(LinkedList locationIds) {
 		
 		
 		
+	}*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public ArrayList<LinkedList<Integer>> getTarget(LinkedList<Integer> locationIds) {
+		ArrayList<LinkedList<Integer>> intermediates = new ArrayList<LinkedList<Integer>>(1);
+
+		for (int id : locationIds) {
+			LinkedList<Integer> paths = new LinkedList<Integer>();
+
+			try {
+				PreparedStatement prs = Connector.localConnector()
+						.prepareStatement("SELECT location_id FROM path WHERE intermediate_id=? ORDER BY id ASC");
+				prs.setInt(1, id);
+				ResultSet rSet = prs.executeQuery();
+
+				while (rSet.next()) {
+					
+					int l_id = rSet.getInt("location_id");
+					paths.add(locationIds.indexOf(l_id));
+				}
+				intermediates.add(paths);
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, e);
+				e.printStackTrace();
+			}
+
+		}
+		return intermediates;
+	}
+
+	public ArrayList<LinkedList<Integer>> getDistances(LinkedList<Integer> locationIds) {
+		ArrayList<LinkedList<Integer>> distances = new ArrayList<LinkedList<Integer>>(1);
+
+		for (int id : locationIds) {
+			LinkedList<Integer> paths = new LinkedList<Integer>();
+
+			try {
+				PreparedStatement prs = Connector.localConnector()
+						.prepareStatement("SELECT distance FROM path WHERE intermediate_id=? ORDER BY id ASC");
+				prs.setInt(1, id);
+				ResultSet rSet = prs.executeQuery();
+				
+				while (rSet.next()) {
+					paths.add(rSet.getInt("distance"));
+				}
+				distances.add(paths);
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, e);
+				e.printStackTrace();
+			}
+		}
+		return distances;
+	}
+	
+	public LinkedList<Integer> getClearingCost(LinkedList<Integer> locationIds) {
+		LinkedList<Integer> intermediates = new LinkedList<Integer>();
+
+		for (int id : locationIds) {
+
+			try {
+				PreparedStatement prs = Connector.localConnector()
+						.prepareStatement("SELECT clearing_cost FROM location WHERE id=? ORDER BY id ASC");
+				prs.setInt(1, id);
+				ResultSet rSet = prs.executeQuery();
+
+				rSet.next();
+				
+				intermediates.add(rSet.getInt("clearing_cost"));
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, e);
+				e.printStackTrace();
+			}
+
+		}
+		return intermediates;
+	}
+
+	public WeightedGraph convertToGraph(LinkedList<Integer> clearingCost,
+			ArrayList<LinkedList<Integer>> intermediates, ArrayList<LinkedList<Integer>> distances) {
+
+		ArrayList<LinkedList<WeightedEdge>> gg = new ArrayList<>(0);
+		//System.out.println(clearingCost+", "+intermediates+", "+distances);
+		for (int i = 0; i < intermediates.size(); i++) {
+
+			LinkedList<WeightedEdge> location = new LinkedList<>();
+
+			for (int j = 0; j < intermediates.get(i).size(); j++) {
+				System.out.println(clearingCost.get(i)+", "+ distances.get(i).get(j)+", "+
+						intermediates.get(i).get(j));
+				location.add(new WeightedEdge(clearingCost.get(i), distances.get(i).get(j),
+						intermediates.get(i).get(j)));
+
+			}
+		}
+
+		WeightedGraph graph = new WeightedGraph(gg);
+		System.out.println("graph size: "+graph.size());
+		return graph;
 	}
 }

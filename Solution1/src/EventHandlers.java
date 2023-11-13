@@ -142,21 +142,32 @@ public class EventHandlers extends GUI implements ActionListener {
 				
 		}
 		else if(event.getSource()==generateButt) {
+			if(originCombo.getSelectedIndex()!=0 && destinationCombo.getSelectedIndex()!=0) {
+				ArrayList<LinkedList<Integer>> target = func.getTarget(locationIds);
+				ArrayList<LinkedList<Integer>> distances = func.getDistances(locationIds);
+				LinkedList<Integer> clearingCost = func.getClearingCost(locationIds);
+				
+				System.out.println(clearingCost);
+				for(LinkedList<Integer> i:distances) {
+					System.out.print(i+",, ");
+				}
+				System.out.println("\n"+locationIds);
+				for(LinkedList<Integer> i:target) {
+					System.out.print(i+",,, ");
+				}
+				WeightedGraph graph = func.convertToGraph(clearingCost, distances, target);
+				System.out.println(graph);
+				LinkedList<Integer> route = Dijkstra.route(graph, locationIds.get(originCombo.getSelectedIndex()-1), locationIds.get(destinationCombo.getSelectedIndex()-1));
+				
+				routeTextArea.setText(locationNames.get(locationIds.indexOf(route.get(0))));
+				
+				for(int i=1;i<route.size();i++) {
+					routeTextArea.setText(routeTextArea.getText()+" ---> " + locationNames.get(locationIds.indexOf(route.get(0))));
+				}
+			}
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			LinkedList<Integer> route = func.getPath(locationIds);
-			
-			routeTextArea.setText(locationNames.get(locationIds.indexOf(route.get(0))));
-			
-			for(int i=1;i<route.size();i++) {
-				routeTextArea.setText(routeTextArea.getText()+" ---> " + locationNames.get(locationIds.indexOf(route.get(0))));
+			else {
+				JOptionPane.showMessageDialog(null, "Please fill the required information!");
 			}
 		}
 	}

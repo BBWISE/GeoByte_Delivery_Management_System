@@ -72,6 +72,7 @@ class Dijkstra {
 		Queue<Integer> Q = new PriorityQueue<Integer>();
 		
 		Q.add(origin);
+		System.out.println(g.size()+" ...."+ origin+" = "+shortestDistance.length);
 		shortestDistance[origin] = 0;
 		previousNode[origin]=origin;
 		
