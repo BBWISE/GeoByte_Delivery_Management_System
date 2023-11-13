@@ -151,7 +151,7 @@ public class EventHandlers extends GUI implements ActionListener {
 			
 			
 			
-			LinkedList<Integer> route = func.get;
+			LinkedList<Integer> route = func.getPath(locationIds);
 			
 			routeTextArea.setText(locationNames.get(locationIds.indexOf(route.get(0))));
 			

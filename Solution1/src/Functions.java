@@ -307,4 +307,11 @@ public class Functions {
 			e.printStackTrace();
 		}
 	}
+	
+	//This method retrieves and returns the list of path from the Database
+	public getPath(LinkedList locationIds) {
+		
+		
+		
+	}
 }
