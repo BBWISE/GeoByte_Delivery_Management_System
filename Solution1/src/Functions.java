@@ -425,4 +425,5 @@ public class Functions {
 		
 		return totalCost;
 	}
+	
 }

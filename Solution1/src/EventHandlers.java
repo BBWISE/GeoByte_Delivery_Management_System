@@ -146,7 +146,7 @@ public class EventHandlers extends GUI implements ActionListener {
 				ArrayList<LinkedList<Integer>> target = func.getTarget(locationIds);
 				ArrayList<LinkedList<Integer>> distances = func.getDistances(locationIds);
 				LinkedList<Integer> clearingCost = func.getClearingCost(locationIds);
-				
+						
 				WeightedGraph graph = func.convertToGraph(clearingCost, distances, target);
 				LinkedList<Integer> route = Dijkstra.route(graph, originCombo.getSelectedIndex()-1, destinationCombo.getSelectedIndex()-1);
 				
@@ -157,7 +157,7 @@ public class EventHandlers extends GUI implements ActionListener {
 				for(int i=1;i<route.size();i++) {
 					routeTextArea.setText(routeTextArea.getText()+" ---> " + locationNames.get(route.get(i)));
 				}
-				routeTextArea.setText(routeTextArea.getText()+"\nTotal cost of $"+totalCost);
+				routeTextArea.setText(routeTextArea.getText()+"\nTotal cost of $"+(totalCost+Dijkstra.totalDistance));
 			}
 			
 			else {
